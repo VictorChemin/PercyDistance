@@ -172,7 +172,7 @@ def on_closing():
         root.destroy()
 
 isDown=0
-folderName="D:/Users/victo/Desktop/PerseveranceFile/"
+folderName="."
 fullFileName=""
 sup_mod=0
 invisible=-1
