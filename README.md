@@ -43,7 +43,10 @@ For example, you can change the name from:
 to:
 `My_First_Mars_Picture_ZLF_0004_0667301285_000FDR_N0010052AUT_04096_110085J.png`
 
-### 3. Limitations
+### 3. Use the program
+Simply start the program, pick the file (Right camera *or* Left camera), and then click-and-drag to draw a rectangle around the feature you are interested in measuring the distance.
+
+### 4. Limitations
 #### a. Choose a target visible in both pictures
 The feature you chose must, obviously, be visible in both pictures. However, you will only be presented with the Right camera picture, so you won't necessarily know wether or not the feature is in both pictures. Normally, the program is supposed to detect if there is no good match, and so if the object isn't visible in both pictures, it should tell you that the result is *uncertain*. However, this can fail, and the program can believe it found a good match if, for example, two very similar rocks are aligned on the x-axis.
 #### b. Choose a target with enough contrast
