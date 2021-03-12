@@ -86,7 +86,9 @@ def dist_pix(xR,xL):
     bL=np.arctan(pL/focal_length)
     eR=np.pi/2-alpha-bR
     eL=np.pi/2-alpha-bL
-    D=l*(np.sin(eL)*np.sin(eR))/(np.sin(eL+eR))
+    DistR=l*np.sin(eL)/np.sin(eL+eR)
+    DistL=l*np.sin(eR)/np.sin(eL+eR)
+    D=(DistR+DistL)/2
     if D<0:
         D=np.Infinity
     return(D)
