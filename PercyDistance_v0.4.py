@@ -2,9 +2,9 @@
 """
 Created on Sun Mar 14 18:11:24 2021
 
-@author: chmn_victor
+@author: victo
 """
-
+import math
 import cv2
 import numpy as np
 import tkinter as tk
@@ -47,6 +47,12 @@ def dist_2_obj(distZ1,distZ2,pos1,pos2):
     d_dist=np.sqrt(dx**2+dy**2+dz**2)
     return(d_dist)
 
+def round_sig(x,n):
+    if x==np.Infinity or x==-np.Infinity:
+        return(np.Infinity)
+    k=n-np.ceil(math.log10(x))
+    return(np.round(x,int(k)))
+
 # Function to select the region of interest with the mouse by clicking and
 # draging. Then, it makes all the necessary calculations and displays the
 # estimated distance on the picture and in the command prompt.
@@ -71,7 +77,7 @@ def click_event(event, x, y, flags, param):
     font_thickness = 1
     shadow_thickness = 2
     font_color=(0,255,0)
-    number_decimals=4
+    number_decimals=3
     
     if event == cv2.EVENT_MBUTTONDOWN:
         imTemp=imgR.copy()
@@ -115,10 +121,10 @@ def click_event(event, x, y, flags, param):
         cv2.rectangle(imTemp,(1,1),(xmax-xmin+1,(ymax-ymin)*2+1),color=(0,0,255),thickness=2,lineType=cv2.LINE_AA)
         
         # Final result
-        cv2.putText(imTemp, str(round(dist_1,number_decimals))+" m", (xmin,ymin-12), font, font_size, (0,0,0), shadow_thickness,lineType=cv2.LINE_AA)
-        cv2.putText(imTemp, str(round(dist_1,number_decimals))+" m", (xmin,ymin-12), font, font_size, font_color, font_thickness,lineType=cv2.LINE_AA)
+        cv2.putText(imTemp, str(round_sig(dist_1,number_decimals))+" m", (xmin,ymin-12), font, font_size, (0,0,0), shadow_thickness,lineType=cv2.LINE_AA)
+        cv2.putText(imTemp, str(round_sig(dist_1,number_decimals))+" m", (xmin,ymin-12), font, font_size, font_color, font_thickness,lineType=cv2.LINE_AA)
         cv2.imshow("image", imTemp)
-        print(xpos,",",ypos," | ",np.round(dist_1,number_decimals)," m")
+        print(xpos,",",ypos," | ",round_sig(dist_1,number_decimals)," m")
         
         dist_1=perpendicular_dist(xpos, xL)        
         position_1=[ypos-int(h/2),xpos-int(w/2)]
@@ -166,14 +172,15 @@ def click_event(event, x, y, flags, param):
             # Final result
             position_2=[ypos-int(h/2),xpos-int(w/2)]
             cv2.line(imTemp2, (int(position_1[1]+w/2),int(position_1[0]+h/2)), (int(position_2[1]+w/2),int(position_2[0]+h/2)), (0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
-            cv2.putText(imTemp2, str(round(dist_2,number_decimals))+" m", (xmin,ymin-12), font, font_size, (0,0,0), shadow_thickness, lineType=cv2.LINE_AA)
-            cv2.putText(imTemp2, str(round(dist_2,number_decimals))+" m", (xmin,ymin-12), font, font_size, font_color, font_thickness, lineType=cv2.LINE_AA)
+            cv2.putText(imTemp2, str(round_sig(dist_2,number_decimals))+" m", (xmin,ymin-12), font, font_size, (0,0,0), shadow_thickness, lineType=cv2.LINE_AA)
+            cv2.putText(imTemp2, str(round_sig(dist_2,number_decimals))+" m", (xmin,ymin-12), font, font_size, font_color, font_thickness, lineType=cv2.LINE_AA)
             dist_2=perpendicular_dist(xpos, xL)
             distance_between_obj=dist_2_obj(dist_1, dist_2, position_1, position_2)
-            cv2.putText(imTemp2, "D: "+str(round(distance_between_obj,number_decimals))+" m", (xmin,ymin-35), font, font_size, (0,0,0), shadow_thickness, lineType=cv2.LINE_AA)
-            cv2.putText(imTemp2, "D: "+str(round(distance_between_obj,number_decimals))+" m", (xmin,ymin-35), font, font_size, font_color, font_thickness, lineType=cv2.LINE_AA)
+            cv2.putText(imTemp2, "D: "+str(round_sig(distance_between_obj,number_decimals))+" m", (xmin,ymin-35), font, font_size, (0,0,0), shadow_thickness, lineType=cv2.LINE_AA)
+            cv2.putText(imTemp2, "D: "+str(round_sig(distance_between_obj,number_decimals))+" m", (xmin,ymin-35), font, font_size, font_color, font_thickness, lineType=cv2.LINE_AA)
             cv2.imshow("image", imTemp2)
-            print(xpos,",",ypos," | ",np.round(dist_2,number_decimals)," m")
+            print(xpos,",",ypos," | ",round_sig(dist_2,number_decimals)," m")
+            print("Dist: ",round_sig(distance_between_obj,number_decimals)," m")
     if event == cv2.EVENT_MOUSEMOVE:
         if leftIsDown==1:
             imTemp=imgR.copy()
@@ -218,7 +225,7 @@ def save_file():
 
 rightIsDown=0
 leftIsDown=0
-folderName="."
+folderName="D:/Users/victo/Desktop/PerseveranceFile/"
 fullFileName=""
 sup_mod=0
 invisible=-1
