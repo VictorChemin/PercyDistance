@@ -2,7 +2,7 @@
 """
 Created on Sun Mar 14 18:11:24 2021
 
-@author: victo
+@author: chmn_victor
 """
 import math
 import cv2
