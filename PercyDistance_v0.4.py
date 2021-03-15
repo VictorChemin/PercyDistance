@@ -2,7 +2,7 @@
 """
 Created on Sun Mar 14 18:11:24 2021
 
-@author: victo
+@author: chmn_victor
 """
 
 import cv2
@@ -218,7 +218,7 @@ def save_file():
 
 rightIsDown=0
 leftIsDown=0
-folderName="D:/Users/victo/Desktop/PerseveranceFile/"
+folderName="."
 fullFileName=""
 sup_mod=0
 invisible=-1
