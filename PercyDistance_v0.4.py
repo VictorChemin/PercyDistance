@@ -267,7 +267,7 @@ while 1:
     # Focal length and downsampling are based on the file's name
     focal_length=float(fileName[46:49])/1000 #get focal length of picture
     downsampling=2**float(fileName[49]) #get downsampling
-    alpha=1.172/180*np.pi  #stereo toad-in angle
+    alpha=1.172/180*np.pi  #stereo toe-in angle
     l=24.3e-2 #stereo distance
     pixel_size=7.4e-6 #pixel size of sensor
     imgsize=imgR.shape #dimensions of image
