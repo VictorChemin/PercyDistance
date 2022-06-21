@@ -15,8 +15,13 @@ Then, launch "CMD.exe Prompt".
 ![pythonw_YnI4Rzznq7](https://user-images.githubusercontent.com/70653697/110837593-b7354800-82a1-11eb-9682-c81fcbab3cca.png)
 
 In the command prompt, type:
-`conda install -c conda-forge opencv`
-`conda install -c conda-forge tk`
+
+`conda install -c conda-forge numpy` to install numpy if it's not intalled by default.
+
+`conda install -c conda-forge opencv` to install opencv.
+
+`conda install -c conda-forge tk` to install tkinter.
+
 You can then close the command prompt.
 
 ### 3. Launch Spyder
