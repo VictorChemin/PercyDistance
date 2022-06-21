@@ -51,13 +51,15 @@ to:
 `My_First_Mars_Picture_ZLF_0004_0667301285_000FDR_N0010052AUT_04096_110085J.png`
 
 ### 3. Use the program
-Simply start the program, pick the file (Right camera *or* Left camera), and then left-click-and-drag to draw a rectangle around the feature you are interested in measuring the distance from the camera. You can also just click, and it will draw a square around your selection. Then the distance between the selection and the camera will be displaye.
+Simply start the program, pick the file (Right camera *or* Left camera, the other one will be picked automatically). Now, you can pick the two left and right pictures of your choice, separetly. This feature has no real use for now. Then left-click-and-drag to draw a rectangle around the feature you are interested in measuring the distance from the camera. You can also just click, and it will draw a square around your selection. Then the distance between the selection and the camera will be displaye.
 
 If you then do the same with the right-click, a line will be drawn between the two selections, and a new measure will be displayed: it is the distance, in 3D space, between the two selections. This measurement can be very unprecise for large distances.
 
 A middle-click will erase your selections.
 
 For each selections, 2 pictures will be displayed in the top left corner. The left one is the selection you made on the visible picture (the left camera picture), and the right one is the matched selection on the other picture (the right camera picture). They are displayed so that you can check if the algorithm did its job (or simply if the feature selected is also visible in the second picture). If both pictures do not match, then the measurement is wrong, and it is likely there is no way you will ever get a good measurement of your selection, as the algorithm is actually very performant and is able to match correctly 10-pixel-large patches of Mars sand. So if it failed the matching process, the most likely explanation is that the selected feature is not visible on the other picture.
+
+You can close the image by pressing Escape or simply closing the window.
 
 ### 4. Limitations
 #### a. Choose a target visible in both pictures
