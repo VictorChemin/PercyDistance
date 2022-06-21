@@ -1,0 +1,61 @@
+MAJOR CHANGES (and some downgrades and explanations):
+_____________________________________________________
+
+- CLEANER PYTHON:
+
+The project is now coded in cleaner Python. Some comments and docstrings are still missing, and some variables might be changed in the future to add clarity. However, the current project is now way easier to update and improve.
+
+__________
+
+- BETTER LOOKING (totally objectively):
+
+The aesthetics of the interface (when we interact with the image) have been changed. No more ugly green, blue and red, non-antialiased lines, rectangles and text.
+
+__________
+
+- MORE PRECISE (supposedly):
+
+The precision could, in theory, have increased. Before selecting the files, you have a spinbox where you can select the "precision". A precision of 3 will mean that the template matching algorithm will be precise up to the 1/3 of a pixel. Be careful, a too high precision will take a large amount of RAM and time, as what it does is just multiplying the width of the picture by the "precision". Thanks to a cubic interpolation, it is supposed to be able to match templates with a higher precision. We advise to keep the precision below 10, and for distances below 100m, a precision of 1 will be enough in most cases.
+
+__________
+
+- MASTCAN TILT CORRECTION
+
+The Mastcam cameras have an issue: the horizon on each sensor will not be parallel. One of the two cameras is slightly tilted by ~0.85°. This slight tilt was causing huge errors for large distances. This has been corrected by tilting the right camera's image.
+
+__________
+
+- NO MORE NAVCAM (for now):
+
+For now, only Mastcam pictures will be usable. Navcam, which was usable in the last version, will be in the near future.
+
+__________
+
+- 1-CLICK ROI SELECTION:
+
+Tired of needing to drag the rectangle to select the region of interest (ROI)? You'd like to be able to know the region of a given point with just one click? Consider it done! A default square ROI will be automatically selected, centered around the point you clicked. But you can still click and drag to select a custom ROI!
+
+__________
+
+- HOW TO USE NOW?
+
+For the measures displayed, here is how they go:
+
+1. If you left-click, the measure displayed will be the distance between the camera and the feature pointed.
+
+2. If you right-click (can only be done after having selected a ROI with the left-click), the measure displayed will be the distanse between the first feature and the second pictures. This distance is the *actual* distance, taking into account the 3 dimensions. Considering this, for objects that are far from the camera, the depth dimension being very unprecise, the distance between the 2 objects will be too, and even more (you could get a distance of 200m instead of 1m).
+
+3. If you middle-click, you will erase every ROI.
+
+Note: the picture you will deal with is always going to be the left picture (for now). This choice is arbitrary, but if a feature is not visible on the left picture but is visible on the right picture, it would of no use anyway, given that no template-matching would be possible.
+
+__________
+
+- WHAT'S NEXT?
+
+Navcam support is the next big step.
+An actual evaluation of the new "better precision" feature.
+The possibility to input your own stereo camera parametern to use this software with any stereo camera.
+Creating a depth map of the picture.
+A better looking Tkinter GUI.
+
