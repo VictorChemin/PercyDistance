@@ -28,7 +28,9 @@ You can then close the command prompt.
 
 ![pythonw_MsBLmlAKON](https://user-images.githubusercontent.com/70653697/110838150-683be280-82a2-11eb-9e15-4a0f18fb2fc7.png)
 
-In Spyder, paste the code. Then, simply click the green arrow to start the program.
+Download the PercyDistance files. For the 1.0 version of PercyDistance, you will need to keep all the .py files in the same folder. For older version, there is only one file so there is no issue.
+
+Then, in Spyder, either open the single file for older version, or open the main.py file for >1.0 versions. Then, simply click the green arrow to start the program.
 
 ## How to use my program?
 Nothing easier than using this program! However, there are some mistakes you shouldn't make, and some limitations you should be aware of.
