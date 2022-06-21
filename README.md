@@ -76,3 +76,5 @@ But what if, by selecting the whole rock, I select some things in the background
 The rule of thumb is that the sharpest and largest object in the selection will be the one which will be matched. The sharpness is actually the most important factor.
 #### d. Don't choose a target which is too far
 Due to technical limitations (pixel resolution, focal length, calibration precision), any object further than 1000 m will have its distance measure with a huge uncertainty. In theory, the maximum distance measurable is 33\*f, with f the focal length in mm.
+
+Since v1.0, the maximum distance measurable is in theory 33\*f\*precision, with precision the number you can enter before selecting your file. In practice, the efficiency of this feature has not been properly tested each, and is purely theoretical. See the patchnote for more precisions.
