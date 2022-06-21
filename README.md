@@ -59,5 +59,8 @@ The feature you chose must, obviously, be visible in both pictures. However, you
 If you just pick a region of interest full of sand, it will match with most of the picture, and the result will be wrong. The program detects when the contrast is under a certain treshold, but the contrast may be above this treshold and still insufficient to make an accurate measurement.
 #### c. Choose a precise enough target, yet large enough
 Ideally, your region of interest should be 30 to 200 pixels wide. But these are very arbitrary numbers. It depends on many factors. The most important thing is to choose a target which is small enough to be at a "precise" distance. Indeed, if you pick a region where a rock is 20 m far, and another is 300 m far, the result won't be accurate.
+/!\ Actually, the algorithm is now pretty good with small Regions Of Interest (ROI). But if you want to measure the distance of a big rock, it is still advised to pick the whole rock, to average the potential 1-pixel errors.
+But what if, by selecting the whole rock, I select some things in the background?
+The rule of thumb is that the sharpest and largest object in the selection will be the one which will be matched. The sharpness is actually the most important factor.
 #### d. Don't choose a target which is too far
 Due to technical limitations (pixel resolution, focal length, calibration precision), any object further than 1000 m will have its distance measure with a huge uncertainty. In theory, the maximum distance measurable is 33\*f, with f the focal length in mm.
