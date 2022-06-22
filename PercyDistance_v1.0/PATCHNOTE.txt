@@ -13,13 +13,15 @@ The aesthetics of the interface (when we interact with the image) have been chan
 
 __________
 
-- MORE PRECISE (supposedly):
+- MORE PRECISE :
 
-The precision could, in theory, have increased. Before selecting the files, you have a spinbox where you can select the "precision". A precision of 3 will mean that the template matching algorithm will be precise up to the 1/3 of a pixel. Be careful, a too high precision will take a large amount of RAM and time, as what it does is just multiplying the width of the picture by the "precision". Thanks to a cubic interpolation, it is supposed to be able to match templates with a higher precision. We advise to keep the precision below 10, and for distances below 100m, a precision of 1 will be enough in most cases.
+The precision has increased. Before selecting the files, you have a spinbox where you can select the "precision". A precision of 3 will mean that the template matching algorithm will be precise up to 1/3 of a pixel. Be careful, a too high precision will take a large amount of RAM and time, as what it does is just multiplying the width of the picture by the "precision". Thanks to a cubic interpolation, it is able to match templates with a higher precision. We advise to keep the precision below 10, and for distances below 100m, a precision of 1 will be enough in most cases.
+
+This feature has been tested on artificially create stereo pictures and can indeed detect fractions of pixels accurately.
 
 __________
 
-- MASTCAN TILT CORRECTION
+- MASTCAM TILT CORRECTION
 
 The Mastcam cameras have an issue: the horizon on each sensor will not be parallel. One of the two cameras is slightly tilted by ~0.85°. This slight tilt was causing huge errors for large distances. This has been corrected by tilting the right camera's image.
 
@@ -54,7 +56,7 @@ __________
 - WHAT'S NEXT?
 
 Navcam support is the next big step.
-An actual evaluation of the new "better precision" feature.
+[DONE] An actual evaluation of the new "better precision" feature.
 The possibility to input your own stereo camera parametern to use this software with any stereo camera.
 Creating a depth map of the picture.
 A better looking Tkinter GUI.
