@@ -51,7 +51,7 @@ to:
 `My_First_Mars_Picture_ZLF_0004_0667301285_000FDR_N0010052AUT_04096_110085J.png`
 
 ### 3. Use the program
-Simply start the program, pick the file (Right camera *or* Left camera, the other one will be picked automatically). Now, you can pick the two left and right pictures of your choice, separetly. This feature has no real use for now. Then left-click-and-drag to draw a rectangle around the feature you are interested in measuring the distance from the camera. You can also just click, and it will draw a square around your selection. Then the distance between the selection and the camera will be displaye.
+Simply start the program, pick the file (Right camera *or* Left camera, the other one will be picked automatically). Now, you can pick the two left and right pictures of your choice, separetly, but this feature has no real use for now (before picking the pictures, you can modify the "precision". With a precision of 5, the template-matching algorithm will be precise up to 1/5 of a pixel). Then left-click-and-drag to draw a rectangle around the feature you are interested in measuring the distance from the camera. You can also just click, and it will draw a square around your selection. Then the distance between the selection and the camera will be displaye.
 
 If you then do the same with the right-click, a line will be drawn between the two selections, and a new measure will be displayed: it is the distance, in 3D space, between the two selections. This measurement can be very unprecise for large distances.
 
@@ -77,4 +77,4 @@ The rule of thumb is that the sharpest and largest object in the selection will 
 #### d. Don't choose a target which is too far
 Due to technical limitations (pixel resolution, focal length, calibration precision), any object further than 1000 m will have its distance measure with a huge uncertainty. In theory, the maximum distance measurable is 33\*f, with f the focal length in mm.
 
-Since v1.0, the maximum distance measurable is in theory 33\*f\*precision, with precision the number you can enter before selecting your file. In practice, the efficiency of this feature has not been properly tested each, and is purely theoretical. See the patchnote for more precisions.
+Since v1.0, the maximum distance measurable is in theory 33\*f\*precision, with precision the number you can enter before selecting your file. Actually, a precision of 5 means that the template-matching algorithm will be precise up to 1/5 of a pixel. This algorithm has been tested and is indeed accurate. 
