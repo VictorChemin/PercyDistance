@@ -60,7 +60,7 @@ def write_around_box(img, text, pt1, pt2, align=(0,0), color=[255,255,255], font
     x = min(pt1[0], pt2[0]) + round(dx * align[0])
     y = min(pt1[1], pt2[1]) + round(dy * align[1]) - offset
 
-    cv.putText(img, text, (x, y), font_face, font_scale,
+    cv.putText(img, text, (int(x), int(y)), font_face, font_scale,
                 color, font_thickness, cv.LINE_AA)
     
     return img
