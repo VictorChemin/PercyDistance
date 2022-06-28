@@ -140,6 +140,7 @@ class Images:
 
         cv.namedWindow("Left Image")
         cv.setMouseCallback("Left Image", self.click_event)
+        cv.setWindowTitle("Left Image", "Left Image - Press Esc to close")
 
     def click_event(self, event, x, y, flags, param):
         
