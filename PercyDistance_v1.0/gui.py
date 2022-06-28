@@ -319,9 +319,9 @@ class Images:
         else:
             temp_darker = self.dark_version.copy()
             # We draw a line joining the 2 ROI on a temporary dark background and on the foreground
-            cv.line(temp_darker, self.center(), self.center(mouse_left=False), color=[255,255,255],
+            cv.line(temp_darker, tuple(self.center()), tuple(self.center(mouse_left=False)), color=[255,255,255],
                     thickness=1, lineType=cv.LINE_AA)
-            cv.line(self.processed_img, self.center(), self.center(mouse_left=False), color=[0,0,0],
+            cv.line(self.processed_img, tuple(self.center()), tuple(self.center(mouse_left=False)), color=[0,0,0],
                     thickness=1, lineType=cv.LINE_AA)
             # We draw a cross for each ROI on the foreground
             self.processed_img = cvp.draw_cross(self.processed_img, self.center(mouse_left=False), 5)
