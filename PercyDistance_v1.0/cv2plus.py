@@ -71,9 +71,9 @@ def draw_cross(img, center, half_length, color=[0,0,0], thickness=1):
         of half_length.
     """
     res = img.copy()
-    cv.line(res, [center[0] - half_length, center[1]], [center[0] + half_length, center[1]],
+    cv.line(res, (center[0] - half_length, center[1]), (center[0] + half_length, center[1]),
                     color=color, thickness=thickness, lineType=cv.LINE_AA)
-    cv.line(res, [center[0], center[1] - half_length], [center[0], center[1] + half_length],
+    cv.line(res, (center[0], center[1] - half_length), (center[0], center[1] + half_length),
                     color=color, thickness=thickness, lineType=cv.LINE_AA)
     return res
 
