@@ -1,3 +1,4 @@
+**IMPORTANT: if you can't close the image by clicking on the X, it's NORMAL. You need to press Escape.**
 # PercyDistance
 A Python program to measure the distance between the rover Perseverance and any feature (&lt;1000 m far) in the landscape by using Mastcam pictures.
 
