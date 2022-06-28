@@ -7,7 +7,6 @@
 import os
 
 import tkinter as tk
-from tkinter import ttk
 from tkinter import filedialog as fd
 
 import numpy as np
@@ -259,11 +258,9 @@ class Images:
         """
             Image showing loop.
         """
-        key_pressed = 0
-        while cv.getWindowProperty('Left Image', cv.WND_PROP_VISIBLE) > 0:
+        while cv.waitKey(1) != 27:
             cv.imshow("Left Image", self.processed_img)
-            if cv.waitKey(1) == 27:
-                cv.destroyWindow("Left Image")
+        cv.destroyAllWindows()
             
     def template_matching(self, mouse_left=True):
         if mouse_left:
